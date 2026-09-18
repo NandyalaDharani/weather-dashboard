@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>Weather</h1>
+                <p>Your local forecast</p>
+            </div>
+
+            <form id="searchForm" class="search">
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    🔍
+                </button>
+            </form>
+
+        </header>
+
+
+        <!-- LOADING -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <span>Loading weather...</span>
+        </div>
+
+
+        <!-- ERROR -->
+        <div id="errorMessage" class="error hidden"></div>
+
+
+        <!-- WEATHER -->
+        <section id="weatherContainer" class="hidden">
+
+            <!-- CURRENT WEATHER -->
+            <section class="current-weather">
+
+                <div class="location">
+                    <h2 id="cityName">Kurnool</h2>
+                    <p id="countryName">India</p>
+                </div>
+
+                <div class="current-main">
+
+                    <div id="weatherIcon" class="big-icon">
+                        ☀️
+                    </div>
+
+                    <div class="temperature-box">
+
+                        <div class="temperature">
+                            <span id="temperature">--</span>°
+                        </div>
+
+                        <div id="weatherDescription"
+                             class="description">
+                            --
+                        </div>
+
+                        <div class="feels">
+                            Feels like
+                            <span id="feelsLike">--</span>°
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="updated">
+                    Updated:
+                    <span id="updatedTime">--</span>
+                </div>
+
+            </section>
+
+
+            <!-- HOURLY FORECAST -->
+            <section class="section">
+
+                <h3>Hourly forecast</h3>
+
+                <div id="hourlyForecast"
+                     class="hourly-list">
+                </div>
+
+            </section>
+
+
+            <!-- DAILY FORECAST -->
+            <section class="section">
+
+                <h3>7-day forecast</h3>
+
+                <div id="dailyForecast"
+                     class="daily-list">
+                </div>
+
+            </section>
+
+
+            <!-- DETAILS -->
+            <section class="section">
+
+                <h3>Weather details</h3>
+
+                <div class="details-grid">
+
+                    <div class="detail-card">
+                        <span>💧</span>
+                        <p>Humidity</p>
+                        <strong>
+                            <span id="humidity">--</span>%
+                        </strong>
+                    </div>
+
+                    <div class="detail-card">
+                        <span>💨</span>
+                        <p>Wind</p>
+                        <strong>
+                            <span id="windSpeed">--</span>
+                            km/h
+                        </strong>
+                    </div>
+
+                    <div class="detail-card">
+                        <span>🌡️</span>
+                        <p>Pressure</p>
+                        <strong>
+                            <span id="pressure">--</span>
+                            hPa
+                        </strong>
+                    </div>
+
+                    <div class="detail-card">
+                        <span>👁️</span>
+                        <p>Visibility</p>
+                        <strong>
+                            <span id="visibility">--</span>
+                            km
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+                Weather data powered by Open-Meteo
+            </footer>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
